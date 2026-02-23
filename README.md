@@ -1,7 +1,7 @@
 # byteOS
 <p>Independent OS in C++. Also try Linux!</p>
 
-MIT/byteOS is an independent operating system written by one person (me), it currently has working keyboard, a command handling function (currently one command called neofetch) and a bootloader in ASM
+MIT/byteOS is an independent operating system written by one person (me), it currently has working keyboard, a command handling function (currently there are commands called help, neofetch, clear, reboot, whoami, touch, ls, echo, cat, write, rm) a RAM file system, and a bootloader in ASM
 
 Here are the compilation instructions:
 
@@ -11,7 +11,7 @@ BOOTLOADER
 
 KERNEL
 
-`gcc -m32 -ffreestanding -fno-exceptions -fno-rtti -nostdlib -c kernel.cpp -o kernel.o`
+`gcc -m32 -ffreestanding -fno-exceptions -fno-rtti -fno-stack-protector -nostdlib -c kernel.cpp -o kernel.o`
 
 LINKING
 
@@ -19,14 +19,11 @@ LINKING
 
 BOOTING (QEMU)
 
-`qemu-system-i386 -kernel kernel.bin`
+`qemu-system-i386 -kernel byte.bin`
 
-And if you are lazy, a pre-compiled version will always be available in the [releases](https://github.com/koredev-lolz/byteOS/releases) tab
-
-
-The current version is version 0.0.1 (codename and kernel name nebula)
+And if you are lazy, a pre-compiled version will always be available in the [releases](https://github.com/nebulingular/byteOS/releases) tab
 
 
-![byteos 0.0.1](https://github.com/user-attachments/assets/07575e66-cabf-484f-bd87-fd1e56d4600c)
+The current version is version 0.2 (codename and kernel name nbla)
 
-
+![byteos 0.2](https://github.com/user-attachments/assets/2ff8a43e-4afb-49f8-a51a-30e9737e6c70)
