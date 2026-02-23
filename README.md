@@ -1,4 +1,4 @@
-# byteOS <img width="1248" height="960" alt="image" src="https://github.com/user-attachments/assets/cda470b4-01d5-41c0-b06d-894fccc8aa09" />
+# byteOS <img width="312" height="240" alt="image" src="https://github.com/user-attachments/assets/cda470b4-01d5-41c0-b06d-894fccc8aa09" />
 
 <p>Independent OS in C++. Also try Linux!</p>
 
