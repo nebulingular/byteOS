@@ -22,8 +22,38 @@ stack_top:
 _start:
     mov $stack_top, %esp
 
+    lgdt (gdt_ptr)
+
+    push $0x08
+    push $.reload_cs
+    retf
+
+.reload_cs:
+    mov $0x10, %ax
+    mov %ax, %ds
+    mov %ax, %es
+    mov %ax, %fs
+    mov %ax, %gs
+    mov %ax, %ss
+
     call kernel_main
 
     cli
 1:  hlt
     jmp 1b
+
+.section .data
+.align 4
+gdt_start:
+    .long 0, 0              
+gdt_code:                   
+    .word 0xFFFF, 0x0000
+    .byte 0x00, 0x9A, 0xCF, 0x00
+gdt_data:                   
+    .word 0xFFFF, 0x0000
+    .byte 0x00, 0x92, 0xCF, 0x00
+gdt_end:
+
+gdt_ptr:
+    .word gdt_end - gdt_start - 1
+    .long gdt_start
